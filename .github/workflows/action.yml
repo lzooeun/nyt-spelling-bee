@@ -1,0 +1,12 @@
+name: continuous-integration
+on: [push]
+jobs:
+    continuous-integration:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v5
+            - uses: oven-sh/setup-bun@v2
+            - run: bun install
+            - run: bun lint
+            - run: bun typecheck
+            - run: bun dprint check

@@ -1,0 +1,25 @@
+{
+    "name": "template",
+    "module": "src/index.tsx",
+    "type": "module",
+    "private": true,
+    "scripts": {
+        "dev": "bun src/index.html",
+        "lint": "bun install && bun oxlint",
+        "fmt": "bun install && bun dprint fmt",
+        "typecheck": "bun tsc --noEmit",
+        "submit": "bun fmt && git add . && git commit -m submit && git push"
+    },
+    "dependencies": {
+        "dprint": "^0.50.2",
+        "oxlint": "^1.23.0",
+        "react": "^19.1.1",
+        "react-dom": "^19.1.1",
+        "typescript": "^5.9.3"
+    },
+    "devDependencies": {
+        "@types/react": "^19",
+        "@types/react-dom": "^19",
+        "@types/bun": "latest"
+    }
+}
