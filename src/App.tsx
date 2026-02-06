@@ -48,6 +48,7 @@ export default function App() {
                 <Scoreboard
                     foundWords={foundWords}
                     maxScore={puzzle.maxScore}
+                    pangrams={puzzle.pangrams}
                 />
             </div>
         </>

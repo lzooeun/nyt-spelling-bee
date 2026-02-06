@@ -1,1 +1,86 @@
+/* Scoreboard */
+.container {
+    width: 380px;
+    background-color: #fff;
+    border: 1px solid #d1d1d1;
+    border-radius: 25px;
+    padding: 25px;
+}
 
+.tabs {
+    display: flex;
+    gap: 10px;
+    background-color: #f1f3f5;
+    padding: 5px;
+    border-radius: 16px;
+    margin-bottom: 25px;
+}
+
+.tabs button {
+    flex: 1;
+    border: none;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 600;
+    background-color: transparent;
+    transition: 0.2s;
+    color: #495057;
+}
+
+.tabs button.active {
+    background-color: #212529;
+    color: #fff;
+}
+
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    color: #adb5bd;
+    margin-bottom: 10px;
+    padding: 0 10px;
+}
+
+.list-header p {
+    margin: 0;
+}
+
+ul.word-list, ul.rank-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.list-item, .rank-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 10px;
+    border-bottom: 1px solid #f1f3f5;
+}
+
+.list-item div, .rank-list li p {
+    margin: 0;
+}
+
+.rank-list li.curent-rank {
+    background-color: #212529;
+    color: #ffffff;
+    border-radius: 15px;
+    border-bottom: none;
+}
+
+.rank-list li.curent-rank span {
+    background-color: #ffffff;
+    color: #212529;
+    font-size: 0.75rem;
+    font-weight: bold;
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 10px;
+}
