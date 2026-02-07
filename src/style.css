@@ -84,3 +84,105 @@ ul.word-list, ul.rank-list {
     border-radius: 50%;
     margin-right: 10px;
 }
+
+
+/* Page layout (Controls left, Scoreboard right) */
+.page {
+    display: flex;
+    gap: 50px;
+    justify-content: space-between;
+    padding: 125px;
+}
+
+/* Controls */
+.controls {
+    width: 380px;
+    padding: 25px;
+    border: 1px solid #d1d1d1;
+    border-radius: 25px;
+    background-color: #ffffff;
+}
+
+.controls input {
+    width: 100%;
+    padding: 7px;
+    font-size: 1rem;
+    border-radius: 12px;
+    border: 1px solid #ced4da;
+    margin-bottom: 10px;
+    text-align: center;
+    text-transform: lowercase;
+}
+
+.error {
+    color: #e03131;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.honeycomb {
+    display: grid;
+    grid-template-columns: repeat(3, 70px);
+    grid-template-rows: repeat(3, 70px);
+    gap: 14px;
+    justify-content: center;
+    margin: 25px 0;
+}
+
+.cell {
+    width: 70px;
+    height: 70px;
+    display: grid;
+    place-items: center;
+}
+
+/* Hexagon buttons */
+.honeycomb button {
+    width: 70px;
+    height: 70px;
+    border: none;
+    font-size: 1.4rem;
+    font-weight: bold;
+    cursor: pointer;
+
+    background-color: #d4d2e3;
+    clip-path: polygon(
+        25% 0%,
+        75% 0%,
+        100% 50%,
+        75% 100%,
+        25% 100%,
+        0% 50%
+    );
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.honeycomb button:hover {
+    background-color: #fff3bf;
+    transform: scale(1.05);
+}
+
+
+/* Control buttons */
+.controls-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.controls-buttons button {
+    flex: 1;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: #212529;
+    color: #ffffff;
+    transition: background-color 0.2s;
+}
+
+.controls-buttons button:hover {
+    background-color: #343a40;
+}

@@ -33,7 +33,7 @@ export default function App() {
 
 
     return (
-        <>
+        <div className="page">
             <div className="controls-section">
                 <Controls
                     puzzle={puzzle}
@@ -51,7 +51,7 @@ export default function App() {
                     pangrams={puzzle.pangrams}
                 />
             </div>
-        </>
+        </div>
     );
 }
 
