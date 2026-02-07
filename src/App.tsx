@@ -1,13 +1,13 @@
+import { useState } from "react";
+import Controls from "./Controls.tsx";
 import puzzle from "./puzzle.ts";
-import { useState } from "react"
-import Scoreboard from './Scoreboard.tsx'
-import Controls from './Controls.tsx'
+import Scoreboard from "./Scoreboard.tsx";
 
 export default function App() {
     // Shared state for words found by the user
-    const [foundWords, setFoundWords] = useState<string[]>([]); 
+    const [foundWords, setFoundWords] = useState<string[]>([]);
     // Shared state for the current text in the input field
-    const [currentInput, setCurrentInput] = useState(""); 
+    const [currentInput, setCurrentInput] = useState("");
 
     // Handler for updating input
     function handleInputChange(next: string): void {
@@ -27,13 +27,11 @@ export default function App() {
             setFoundWords(foundWords.concat([normalizedWord]));
         }
 
-        setCurrentInput("")
+        setCurrentInput("");
     }
 
-
-
     return (
-        <>
+        <div className="page">
             <div className="controls-section">
                 <Controls
                     puzzle={puzzle}
@@ -51,7 +49,6 @@ export default function App() {
                     pangrams={puzzle.pangrams}
                 />
             </div>
-        </>
+        </div>
     );
 }
-
