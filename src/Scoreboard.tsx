@@ -17,10 +17,12 @@ type ScoreboardProps = {
     foundWords: string[];
     maxScore: number;
     pangrams: string[];
-}
+};
 
-export default function Scoreboard({ foundWords, maxScore, pangrams }: ScoreboardProps) {
-    const [activeTab, setActiveTab] = useState<"score" | "rank">("score")
+export default function Scoreboard(
+    { foundWords, maxScore, pangrams }: ScoreboardProps,
+) {
+    const [activeTab, setActiveTab] = useState<"score" | "rank">("score");
 
     function calculatePoints(word: string): number {
         let score = (word.length === 4) ? 1 : word.length;
@@ -43,36 +45,50 @@ export default function Scoreboard({ foundWords, maxScore, pangrams }: Scoreboar
         };
     });
 
-    const currentRank = rankTable.find((r) => totalScore >= r.minScore)?.name || "Beginner";
+    const currentRank = rankTable.find((r) => totalScore >= r.minScore)?.name
+        || "Beginner";
 
     return (
         <div className="container">
             <nav className="tabs">
-                <button className={activeTab === "score" ? "active" : ""} onClick={() => setActiveTab("score")}>
+                <button
+                    className={activeTab === "score" ? "active" : ""}
+                    onClick={() => setActiveTab("score")}
+                >
                     Score: {totalScore}
                 </button>
-                <button className={activeTab === "rank" ? "active" : ""} onClick={() => setActiveTab("rank")}>
+                <button
+                    className={activeTab === "rank" ? "active" : ""}
+                    onClick={() => setActiveTab("rank")}
+                >
                     Rank: {currentRank}
                 </button>
             </nav>
-            
+
             <div className="tab-content">
-                {activeTab === "score" ? (
-                    <ScoreTab foundWords={foundWords} getWordScore={calculatePoints} />
-                ) : (
-                    <RankTab rankTable={rankTable} totalScore={totalScore} currentRank={currentRank} />
-                )}
+                {activeTab === "score"
+                    ? (
+                        <ScoreTab
+                            foundWords={foundWords}
+                            getWordScore={calculatePoints}
+                        />
+                    )
+                    : (
+                        <RankTab
+                            rankTable={rankTable}
+                            totalScore={totalScore}
+                            currentRank={currentRank}
+                        />
+                    )}
             </div>
         </div>
     );
 }
 
-
-
 type ScoreTabProps = {
     foundWords: string[];
-    getWordScore: (word: string) => number
-}
+    getWordScore: (word: string) => number;
+};
 
 function ScoreTab({ foundWords, getWordScore }: ScoreTabProps) {
     return (
@@ -90,17 +106,17 @@ function ScoreTab({ foundWords, getWordScore }: ScoreTabProps) {
                 ))}
             </ul>
         </div>
-    )
+    );
 }
 
 type RankRow = {
     name: string;
     minScore: number;
-}
+};
 
 type RankTabProps = {
-    rankTable: RankRow[],
-    totalScore: number,
+    rankTable: RankRow[];
+    totalScore: number;
     currentRank: string;
 };
 
@@ -113,12 +129,22 @@ function RankTab({ rankTable, totalScore, currentRank }: RankTabProps) {
             </div>
             <ul className="rank-list">
                 {rankTable.map((row) => (
-                    <li key={row.name} className={currentRank === row.name ? "curent-rank": ""}>
-                        <p>{currentRank === row.name && <span>{totalScore}</span>}{row.name}</p>
+                    <li
+                        key={row.name}
+                        className={currentRank === row.name
+                            ? "curent-rank"
+                            : ""}
+                    >
+                        <p>
+                            {currentRank === row.name && (
+                                <span>{totalScore}</span>
+                            )}
+                            {row.name}
+                        </p>
                         <p>{row.minScore}</p>
                     </li>
                 ))}
             </ul>
         </div>
-    )
+    );
 }

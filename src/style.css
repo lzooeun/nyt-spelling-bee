@@ -85,7 +85,6 @@ ul.word-list, ul.rank-list {
     margin-right: 10px;
 }
 
-
 /* Page layout (Controls left, Scoreboard right) */
 .page {
     display: flex;
@@ -162,7 +161,6 @@ ul.word-list, ul.rank-list {
     background-color: #fff3bf;
     transform: scale(1.05);
 }
-
 
 /* Control buttons */
 .controls-buttons {

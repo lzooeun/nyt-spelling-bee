@@ -96,19 +96,21 @@ export default function Controls({
                 <div className="honeycomb">
                     {cells.map((letter, index) => (
                         <div key={index} className="cell">
-                            {letter !== null ? (
-                                <button
-                                    type="button"
-                                    className={
-                                        letter === puzzle.centerLetter
+                            {letter !== null
+                                ? (
+                                    <button
+                                        type="button"
+                                        className={letter
+                                                === puzzle.centerLetter
                                             ? "center-letter"
-                                            : ""
-                                    }
-                                    onClick={() => handleLetterClick(letter)}
-                                >
-                                    {letter}
-                                </button>
-                            ) : null}
+                                            : ""}
+                                        onClick={() =>
+                                            handleLetterClick(letter)}
+                                    >
+                                        {letter}
+                                    </button>
+                                )
+                                : null}
                         </div>
                     ))}
                 </div>
