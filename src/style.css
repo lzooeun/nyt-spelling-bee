@@ -89,7 +89,7 @@ ul.word-list, ul.rank-list {
 .page {
     display: flex;
     gap: 50px;
-    justify-content: space-between;
+    justify-content: center;
     padding: 125px;
 }
 
@@ -104,62 +104,81 @@ ul.word-list, ul.rank-list {
 
 .controls input {
     width: 100%;
-    padding: 7px;
-    font-size: 1rem;
-    border-radius: 12px;
-    border: 1px solid #ced4da;
-    margin-bottom: 10px;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    font-size: 1.5rem;
+    font-weight: 700;
     text-align: center;
-    text-transform: lowercase;
+    padding: 10px;
+    margin-bottom: 10px;
+    outline: none;
+    text-transform: uppercase;
+}
+
+.controls input::placeholder {
+    color: #ccc;
+    font-size: 1.2rem;
 }
 
 .error {
+    background-color: #ffeded;
     color: #e03131;
+    border-radius: 20px;
+    padding: 8px 15px;
     font-size: 0.9rem;
     text-align: center;
-    margin-bottom: 10px;
+    margin: 10px 0;
 }
 
 .honeycomb {
-    display: grid;
-    grid-template-columns: repeat(3, 70px);
-    grid-template-rows: repeat(3, 70px);
-    gap: 14px;
-    justify-content: center;
-    margin: 25px 0;
+    position: relative;
+    width: 260px;
+    height: 280px;
+    margin: 50px auto;
 }
 
 .cell {
-    width: 70px;
-    height: 70px;
-    display: grid;
-    place-items: center;
+    position: absolute;
+    width: 90px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Hexagon buttons */
 .honeycomb button {
-    width: 70px;
-    height: 70px;
+    width: 100%;
+    height: 100%;
     border: none;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: bold;
     cursor: pointer;
-
     background-color: #d4d2e3;
-    clip-path: polygon(
-        25% 0%,
-        75% 0%,
-        100% 50%,
-        75% 100%,
-        25% 100%,
-        0% 50%
-    );
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
     transition: background-color 0.2s, transform 0.1s;
+}
+
+.honeycomb button.center-letter {
+    background-color: #f7da21;
 }
 
 .honeycomb button:hover {
     background-color: #fff3bf;
     transform: scale(1.05);
+}
+
+.cell:nth-child(1) { top: 0;      left: 85px; }
+.cell:nth-child(2) { top: 45px;   left: 0; }
+.cell:nth-child(3) { top: 45px;   left: 170px; }
+.cell:nth-child(5) { top: 90px;   left: 85px; }
+.cell:nth-child(7) { top: 135px;  left: 0; }
+.cell:nth-child(8) { top: 135px;  left: 170px; }
+.cell:nth-child(9) { top: 180px;  left: 85px; }
+
+.honeycomb button:hover {
+    background-color: #fff3bf;
+    transform: scale(1.05);
+    z-index: 10;
 }
 
 /* Control buttons */
