@@ -5,6 +5,7 @@
     "private": true,
     "scripts": {
         "dev": "bun src/index.html",
+        "build": "mkdir -p dist && bun build src/index.tsx --outdir ./dist && cp src/index.html src/style.css dist/ && sed -i 's/index.tsx/index.js/g' dist/index.html",
         "lint": "bun install && bun oxlint",
         "fmt": "bun install && bun dprint fmt",
         "typecheck": "bun tsc --noEmit",
