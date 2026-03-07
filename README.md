@@ -1,6 +1,21 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/9XsJD3Aw)
+# 🐝 NYT Spelling Bee (React Clone)
 
-# Project: Spelling Bee
+A highly responsive, minimalist recreation of the popular New York Times Spelling Bee word puzzle game. Built as a collaborative academic project, focusing on complex state management and clean UI/UX design.
 
-- Jooeun Lee
-- Intessar Muhi Eddin
+[Live Demo](https://nyt-spelling-bee.vercel.app)
+
+## 🛠 Tech Stack
+- **Frontend:** React.js, JavaScript (ES6+), CSS3
+- **Build Tool:** Bun / Vite
+- **Deployment:** Vercel
+
+## 🙋‍♀️ My Contributions (Jooeun Lee)
+Working in a two-person team with Intessar, I primarily focused on the **Design and Core Game Logic**:
+- **UI/UX Design:** Designed and implemented the minimalist, responsive layout (including the iconic hexagonal grid).
+- **Core Logic Implementation:** Programmed the word-validation algorithm and the dynamic scoring system using React Hooks.
+- **State Management:** Handled the complex states for user inputs, accepted words, and error messaging.
+
+## ✨ Key Features
+- **Interactive Hexagon Grid:** Clickable UI that accurately mimics the original game's behavior.
+- **Dynamic Scoring System:** Calculates points based on word length and pangram detection.
+- **Responsive Design:** Optimized for seamless gameplay on both desktop and mobile devices.
